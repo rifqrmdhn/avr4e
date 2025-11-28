@@ -1287,7 +1287,7 @@ times = [
 
 
 def get_calendar_name() -> str:
-    start_date = datetime.datetime(2025, 8, 31, 0, 0, 0, tzinfo=jkt)
+    start_date = datetime.datetime(2025, 11, 29, 0, 0, 0, tzinfo=jkt)
     now = datetime.datetime.now(jkt)
 
     delta_days = (now - start_date).days + 1
@@ -1300,7 +1300,7 @@ def get_calendar_name() -> str:
     return calendar_name
 
 async def update_calendar():
-    channel_calendar = bot.get_channel(1396001668633722931)
+    channel_calendar = bot.get_channel(1436605726536630382)
     channel_name = f"📅 {get_calendar_name()}"
     print(channel_name)
     try:
@@ -1361,10 +1361,10 @@ async def update_ds(guild_id: int):
 async def daily_task_run():
     await update_calendar()
     await update_ds(1343085306571915276)
-    bot_dump_channel = bot.get_channel(1395988000474660935)
+    bot_dump_channel = bot.get_channel(1430447579342176358)
     await bot_dump_channel.send(
         "Done updating calendar and downtime.")
-    global_group_chat = bot.get_channel(1411751429873598496)
+    global_group_chat = bot.get_channel(1430447579342176358)
     await global_group_chat.send(
         f"```📅 {get_calendar_name()}```"
     )
@@ -1372,8 +1372,8 @@ async def daily_task_run():
 
 def get_in_game_date(irl_day_number):
     months = [
-        "🌸Terra", "🌸Marzen", "🌞Saturna", "🌞Venira",
-        "🍂Juvion", "🍂Mercion", "🧊Urantis", "🧊Nevaris"
+        "❄️ Soli", "❄️ Nacht", "🌳 Marzen", "🌳 Amethi",
+        "☀️ Jue", "☀️ Agus", "🍂 Sever", "🍂 Orchid"
     ]
 
     total_irl_days_in_year = 28
